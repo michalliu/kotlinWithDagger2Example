@@ -1,3 +1,5 @@
+package appjs.kotlinwithdagger2example
+
 import android.app.Application
 
 class App() : Application() {
