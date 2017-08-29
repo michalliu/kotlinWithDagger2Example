@@ -1,6 +1,7 @@
 package appjs.kotlinwithdagger2example
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import appjs.kotlinwithdagger2example.injectors.ApplicationComponent
 import appjs.kotlinwithdagger2example.injectors.ApplicationModule
@@ -26,5 +27,8 @@ class App : Application() {
     }
     companion object {
         val TAG = "App"
+        fun get(context : Context) : App {
+            return context.applicationContext as App
+        }
     }
 }
