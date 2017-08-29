@@ -8,5 +8,9 @@ import javax.inject.Singleton
 
 
 @Singleton
-open class DataManager @Inject constructor(@ApplicationContext val mContext: Context,
-                                           val mDbHelper: DbHelper)
+open class DataManager @Inject constructor(@ApplicationContext context: Context,
+                                           mDbHelper: DbHelper) {
+    init {
+        mDbHelper.createDbOnce()
+    }
+}
